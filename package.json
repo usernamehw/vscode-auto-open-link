@@ -1,0 +1,68 @@
+{
+	"name": "auto-open-link",
+	"displayName": "Auto open link",
+	"description": "Automatically open document links when clicking on them (in editor).",
+	"version": "0.1.0",
+	"publisher": "usernamehw",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usernamehw/vscode-auto-open-link"
+	},
+	"qna": false,
+	"bugs": {
+		"url": "https://github.com/usernamehw/vscode-auto-open-link/issues"
+	},
+	"keywords": [
+		"open",
+		"url",
+		"document",
+		"link"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"configuration": {
+			"title": "Auto Open Link",
+			"properties": {
+				"autoOpenLink.linkRegex": {
+					"type": "string",
+					"markdownDescription": "RegExp string or asterisk `*` (means all). Only auto open links that match the regexp.\n\nExample: `^https://www.reddit.com\\/?.*`",
+					"default": "*"
+				}
+			}
+		}
+	},
+	"browserslist": [
+		"chrome 98"
+	],
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production --color",
+		"watch": "webpack --mode development --watch --stats minimal"
+	},
+	"devDependencies": {
+		"@soda/friendly-errors-webpack-plugin": "^1.8.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.66.0",
+		"@typescript-eslint/eslint-plugin": "^5.48.1",
+		"@typescript-eslint/parser": "^5.48.1",
+		"eslint": "^8.31.0",
+		"eslint-plugin-no-autofix": "^1.2.3",
+		"ts-loader": "^9.4.2",
+		"typescript": "^4.9.4",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	}
+}
